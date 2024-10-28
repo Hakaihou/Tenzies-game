@@ -1,0 +1,168 @@
+body {
+  background: #0B2434;
+  padding-top: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.main-container {
+  border-radius: 5px;
+  background: #F5F5F5;
+  height: 360px;
+  width: 360px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 15px 20px;
+
+  & h1 {
+    margin: 0;
+  }
+
+  & p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .die-container {
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    gap: 18px;
+    transition: 0.5s all;
+
+    .die {
+      box-shadow: 0px 2px 2px 0px #00000026;
+      background: #FFFFFF;
+      border-radius: 4px;
+      width: 36px;
+      height: 36px;
+      padding: 5px;
+      box-sizing: border-box;
+      font-size: 21px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+      transition: 0.2s all;
+
+      .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 100%;
+        background: black;
+      }
+    }
+
+    .die-1 {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .die-2 {
+      align-items: start;
+
+      .dot:nth-child(2) {
+        align-self: end;
+      }
+    }
+
+    .die-3 {
+      align-items: start;
+
+      .dot:nth-child(2) {
+        align-self: center;
+      }
+
+      .dot:nth-child(3) {
+        align-self: end;
+      }
+    }
+
+    .die-4 {
+      flex-wrap: wrap;
+      gap: 5px;
+
+      .dot:nth-child(3), .dot:nth-child(4) {
+        align-self: end;
+      }
+    }
+    .die-5 {
+      flex-wrap: wrap;
+      gap: 5px;
+      position: relative;
+
+      .dot:nth-child(3) {
+        position: absolute;
+        top: calc(50% - 3.5px);
+        left: calc(50% - 3.5px);
+      }
+
+      .dot:nth-child(4), .dot:nth-child(5) {
+        align-self: end;
+      }
+    }
+
+    .die-6 {
+      flex-wrap: wrap;
+      gap: 0 3px;
+
+      .dot:nth-child(3), .dot:nth-child(4) {
+        align-self: center;
+      }
+
+      .dot:nth-child(5), .dot:nth-child(6) {
+        align-self: end;
+      }
+    }
+
+    .active {
+      background: #59E391;
+      box-shadow:none;
+    }
+
+    .flip {
+      transform: rotate(360deg);
+    }
+  }
+
+  & button {
+    font-weight: 700;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background: #5035FF;
+    border: none;
+    cursor:pointer;
+    transition: 0.3s all;
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+
+    &:hover {
+      background: #4428f1;
+      transition: 0.3s all;
+    }
+
+    &:active {
+      scale:0.95;
+      transition: 0.3s all;
+    }
+  }
+
+  .flex-container {
+    display:flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    border: 3px solid #5035FF;
+    padding: 5px;
+    border-radius: 5px;
+
+    & span {
+      color: #59E391;
+      font-weight: bold;
+    }
+  }
+}
