@@ -28,7 +28,7 @@
   "scripts": {
     "start": "webpack serve --mode development --mode production --open",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d .",
     "build": "webpack --mode production"
   },
   "keywords": [],
